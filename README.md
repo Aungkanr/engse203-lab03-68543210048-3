@@ -86,3 +86,6 @@ npm run dev
 | **FormData ว่างเปล่า** | ตรวจว่าทุก `input` มี attribute `name` ครบถ้วน |
 | **กด Submit แล้วหน้ารีโหลด** | ตรวจว่า submit handler เรียก `preventDefault()` แล้วหรือยัง |
 | **Push ถูกปฏิเสธ (denied)** | ตรวจการเชื่อมต่อด้วย `ssh -T git@github.com` และตรวจ `git remote -v` |
+
+## git page
+[https://aungkanr.github.io/engse203-lab03-68543210048-3/]
