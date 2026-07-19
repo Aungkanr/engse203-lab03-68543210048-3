@@ -65,3 +65,24 @@ npm run dev
 ### 3. การตรวจสอบข้อมูล ( error )
 
 ![Validation View](img/screenshot-error.png)
+
+## 🐛 ปัญหาที่พบและวิธีแก้ไข
+
+| ปัญหาที่พบ | สาเหตุ / วิธีแก้ไข |
+| :--- | :--- |
+| **1. รันโปรเจกต์แล้วไฟล์ CSS ไม่ถูกโหลด** | สาเหตุจากระบุ path ผิด <br> **วิธีแก้:** เติมเครื่องหมายจุดนำหน้า path: `/src/style.css` → `./src/style.css` |
+| **2. รันโปรเจกต์แล้วไฟล์ JavaScript ไม่ถูกโหลด** | สาเหตุจากระบุ path ผิดเช่นกัน <br> **วิธีแก้:** เติมเครื่องหมายจุดนำหน้า path: `/src/main.js` → `./src/main.js` |
+| **3. เปิดด้วย Live Server แล้ว JavaScript ไม่ทำงาน** | **วิธีแก้:** คอมเมนต์บรรทัด `import './style.css';` ไว้ชั่วคราว เนื่องจาก Live Server ไม่รองรับการ import สไตล์แบบนี้โดยตรง |
+| **4. สั่ง `npm install` แล้วระบบแจ้งว่าหา Node.js ไม่พบ** | **วิธีแก้:** ถอนการติดตั้ง Node.js เดิมออกแล้วติดตั้งใหม่อีกครั้ง |
+| **5. PowerShell ปฏิเสธการรันสคริปต์ (`npm.ps1`)** | สาเหตุเนื่องจากตั้งค่า Execution Policy เป็น Restricted <br> **วิธีแก้:** รันคำสั่ง `Set-ExecutionPolicy RemoteSigned -Scope CurrentUser` แล้วกด `Y` เพื่อยืนยัน |
+| **6. สั่ง `npm install` ไม่สำเร็จ** | สาเหตุเพราะยังไม่ได้เข้าไปในโฟลเดอร์โปรเจกต์ที่ถูกต้อง <br> **วิธีแก้:** เข้าไปยังโฟลเดอร์ที่มีไฟล์ `package.json`, โฟลเดอร์ `src`, และ `index.html` ก่อนรันคำสั่งอีกครั้ง |
+
+## 🔍 แนวทางตรวจสอบปัญหาเบื้องต้น (Quick Diagnosis)
+
+| อาการที่พบ | จุดที่ควรตรวจสอบ |
+| :--- | :--- |
+| **GitHub Pages ขึ้น 404** | ตรวจ Settings → Pages ว่าตั้ง branch `main` และโฟลเดอร์ `/docs` ถูกต้อง |
+| **ไม่มี CSS/JS หลัง deploy** | ตรวจค่า `base` ใน `vite.config.js` ให้ตรงกับชื่อ repository แล้ว build ใหม่ |
+| **FormData ว่างเปล่า** | ตรวจว่าทุก `input` มี attribute `name` ครบถ้วน |
+| **กด Submit แล้วหน้ารีโหลด** | ตรวจว่า submit handler เรียก `preventDefault()` แล้วหรือยัง |
+| **Push ถูกปฏิเสธ (denied)** | ตรวจการเชื่อมต่อด้วย `ssh -T git@github.com` และตรวจ `git remote -v` |
