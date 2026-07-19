@@ -51,17 +51,17 @@ npm run dev
 *(กรุณานำรูปภาพผลลัพธ์ของคุณไปใส่ไว้ในโฟลเดอร์ `img/` ก่อน แล้วแก้ไขชื่อไฟล์ในวงเล็บ `()` ด้านล่างให้ตรงกับชื่อรูปจริงของคุณนะครับ)*
 
 ### 1. หน้าเว็บแบบ Desktop และการทำ Live Preview
-แสดงผลหน้าฟอร์มเต็มรูปแบบบนคอมพิวเตอร์ พร้อมแสดงข้อมูลในส่วน Live Preview
+
 ![Desktop View](img/screenshot-desktop.png)
 
 ### 2. หน้าเว็บแบบ Mobile (Responsive Layout)
-แสดงผลหน้าฟอร์มเมื่อเปิดผ่านมือถือ (ควรแสดงผลเป็น 1 คอลัมน์)
+
 ![Mobile View](img/screenshot-mobile.png)
 
 ### 3. การตรวจสอบข้อมูล ( real time Live Preview )
-แสดงตัวอย่างเมื่อกรอกข้อมูลผิด (Error State) และเมื่อกรอกข้อมูลครบถ้วน (Success State)
+
 ![Validation View](img/screenshot-real.png)
 
 ### 3. การตรวจสอบข้อมูล ( error )
-แสดงตัวอย่างเมื่อกรอกข้อมูลผิด (Error State) และเมื่อกรอกข้อมูลครบถ้วน (Success State)
+
 ![Validation View](img/screenshot-error.png)
